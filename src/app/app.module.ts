@@ -13,6 +13,7 @@ import { RegisterComponent } from './register/register.component';
 import { routing } from './common/routing/app.routing';
 import { AlertService } from './common/services/alert.service';
 import { UserService } from './common/services/user.service';
+import { LocationService } from './common/services/location.service';
 import { AuthenticationService } from './common/services/authentication.service';
 import { AppConfig } from './app.config';
 
@@ -29,7 +30,7 @@ import { AppConfig } from './app.config';
       apiKey: 'AIzaSyDcKzggHUduHav6d1dRY_otlJyaKUtVKwE'
     })
   ],
-  providers: [AuthenticationService, AlertService, UserService, AppConfig],
+  providers: [AuthenticationService, AlertService, UserService, AppConfig, LocationService],
   declarations: [AppComponent, HomeComponent, LoginComponent, RegisterComponent, MapComponent, NavbarComponent],
   bootstrap: [AppComponent]
 })

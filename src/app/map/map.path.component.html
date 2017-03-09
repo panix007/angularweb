@@ -1,0 +1,25 @@
+<sebm-google-map
+      [latitude]="lat"
+      [longitude]="lng"
+      [zoom]="zoom"
+      [disableDefaultUI]="false"
+      [zoomControl]="true"
+      (mapClick)="mapClicked($event)">
+
+      <sebm-google-map-polyline>
+      <sebm-google-map-polyline-point
+          *ngFor="let loc of locations; let i = index"
+          [latitude]="loc.Lattitude"
+          [longitude]="loc.Longitude"
+          >
+
+        <sebm-google-map-info-window>
+          <strong>InfoWindow content</strong>
+        </sebm-google-map-info-window>
+      </sebm-google-map-polyline-point>
+      </sebm-google-map-polyline>
+
+      <sebm-google-map-polyline-point [latitude]="latA" [longitude]="lngA">
+               </sebm-google-map-polyline-point>
+
+    </sebm-google-map>
