@@ -15,6 +15,12 @@
 
         <sebm-google-map-info-window>
           <strong>InfoWindow content</strong>
+
+          <div *ngIf="i == locations.length-1">
+            <sebm-google-map-marker [latitude]="loc.Lattitude" [longitude]="loc.Longitude"></sebm-google-map-marker>
+          </div>
+
+
         </sebm-google-map-info-window>
       </sebm-google-map-polyline-point>
       </sebm-google-map-polyline>

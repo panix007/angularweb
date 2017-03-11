@@ -18,8 +18,8 @@ export class MapComponent {
   // google maps zoom level
   zoom: number = 12;
   // initial center position for the map
-  lat: number = 10.0246371;
-  lng: number = 76.3559918;
+  lat: number = 11.0168;
+  lng: number = 76.9558;
 
   locations: Observable<Array<any>>;
   data: Observable<Array<any>>;
