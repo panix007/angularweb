@@ -28,13 +28,17 @@ export class MapComponent {
       private _http: Http, private config: AppConfig) {
         this._http.get(this.config.apiUrl + '/api/entities/locations').subscribe((res: Response) => {
              this.locations = res.json();
-             console.log('response: '+this.locations);
+             console.log('### response: '+this.locations);
+             if (this.locations != null && this.locations[0] != null){
+               this.lat = this.locations[0].Lattitude;
+               this.lng = this.locations[0].Longitude;
+               console.log('### initial lat: '+this.lat+', initial lng: '+this.lng);
+             }
           });
-
       }
 
   clickedMarker(label: string, index: number) {
-    console.log(`clicked the marker: ${label || index}`)
+    console.log(`### clicked the marker: ${label || index}`)
   }
 
 }

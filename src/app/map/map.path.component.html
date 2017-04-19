@@ -6,7 +6,11 @@
       [zoomControl]="true"
       (mapClick)="mapClicked($event)">
 
-      <sebm-google-map-polyline>
+      <sebm-google-map-polyline
+        [clickable]="true"
+        [strokeColor]="Blue"
+        [strokeOpacity]="0.5"
+      >
       <sebm-google-map-polyline-point
           *ngFor="let loc of locations; let i = index"
           [latitude]="loc.Lattitude"
@@ -17,9 +21,12 @@
           <strong>InfoWindow content</strong>
 
           <div *ngIf="i == locations.length-1">
-            <sebm-google-map-marker [latitude]="loc.Lattitude" [longitude]="loc.Longitude"></sebm-google-map-marker>
+            <sebm-google-map-marker [latitude]="loc.Lattitude" [longitude]="loc.Longitude" [title]="i"></sebm-google-map-marker>
           </div>
 
+          <div *ngIf="i == 0">
+            <sebm-google-map-marker [latitude]="loc.Lattitude" [longitude]="loc.Longitude" [iconUrl]='http://www.iconsdb.com/icons/preview/caribbean-blue/car-25-xxl.png'></sebm-google-map-marker>
+          </div>
 
         </sebm-google-map-info-window>
       </sebm-google-map-polyline-point>
